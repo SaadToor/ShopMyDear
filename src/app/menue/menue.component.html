@@ -1,0 +1,33 @@
+<ion-menu side="start" menuId="first" contentId="main">
+  
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content *ngIf="logedIn">
+    <ion-img src="../../assets/icon/accountIcon.jpg" height="250" position="center"></ion-img>
+    <ion-label style="font-size: 20px;" [routerLink]="['./account-information']"> {{ currentUser.fullName }} </ion-label>
+  </ion-content>
+
+  <ion-content>
+    <ion-list>
+      <ion-item [routerLink]="['./home']">Home</ion-item>
+      <ion-item [routerLink]="['./tshirts']">T-Shirts</ion-item>
+      <ion-item [routerLink]="['./hoodies']">Hoodies</ion-item>
+      <ion-item [routerLink]="['./cart']">My Shopping Cart</ion-item>
+    </ion-list>
+  </ion-content>
+
+
+
+  <ion-toolbar position="bottom">
+    <ion-list>
+      <ion-item [routerLink]="['./register']" [hidden]="logedIn">Register</ion-item>
+      <ion-item [routerLink]="['./login']" [hidden]="logedIn">Login</ion-item>
+      <ion-item (click)="userLogedOut()" [hidden]="!logedIn" position="bottom">Logout</ion-item>
+    </ion-list>
+  </ion-toolbar>
+
+</ion-menu>

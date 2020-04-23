@@ -1,0 +1,8 @@
+{
+  "name": "ShopMyDear",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
